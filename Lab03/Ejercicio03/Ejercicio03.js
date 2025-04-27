@@ -1,5 +1,5 @@
 document .addEventListener('DOMContentLoaded', function(){
-    const hoy = new Date();
+    const hoy = new Date(2025, 7, 15);
     const añoActual = hoy.getFullYear();
     const diaArequipa = new Date(añoActual, 7, 15);
 
