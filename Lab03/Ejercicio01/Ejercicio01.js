@@ -1,5 +1,5 @@
 //Funcion que recibe el numero del dia de la semana y retorna el nombre del dia
-function nombreDia(dia){
+function nombre(dia){
     const diasSemana = [
         "Domingo",
         "Lunes",
@@ -19,7 +19,7 @@ function nombreDia(dia){
 
 //Ejemplo del uso de la funcion
 const fecha = new Date();
-const numDia = fecha.getDay(); // getDay() devuelve 0-6
-const nomDia = nombreDia(numDia);
+const numeroDia = fecha.getDay(); // getDay() devuelve 0-6
+const nombreDia = nombre(numeroDia);
 
-console.log(nomDia); 
+console.log(nombreDia); 
