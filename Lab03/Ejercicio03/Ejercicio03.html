@@ -1,17 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio03</title>
+    <style>
+        body {            
+            background-color: hsl(208, 81%, 68%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;            
+            color: #6092c4;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: hsla(313, 78%, 56%, 0.541);
+            font-size: 2rem;
+        }
+
+        .fecha {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #457b9d;
+        }
+    </style>
 </head>
+
 <body>
     <div class="container">
         <h1>¡Faltan <span id="dias-faltantes">0</span> días para el Día de Arequipa!</h1>
         <p class="fecha">El dia de Arequipa se celebra cada 15 de agosto</p>
-        
+
     </div>
     <script src="Ejercicio03.js"></script>
 </body>
+
 </html>
