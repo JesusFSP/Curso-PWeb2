@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const match = url.match(regex);
         
         if (match) {
-            // Eliminar guiones y unir las partes
+            
             return match[1] + match[2] + match[3];
         }
         return null;
