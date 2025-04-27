@@ -3,6 +3,7 @@ document .addEventListener('DOMContentLoaded', function(){
     const añoActual = hoy.getFullYear();
     const diaArequipa = new Date(añoActual, 7, 15);
 
+    //la diferencia representada por milisegundos
     const diferencia = diaArequipa - hoy;
     const diasFaltantes = Math.ceil(diferencia / (1000 * 60 * 60 * 24));
 
