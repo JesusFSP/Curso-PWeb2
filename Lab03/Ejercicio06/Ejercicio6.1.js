@@ -21,5 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
+    cambiarColorBtn.addEventListener('click', function() {
+        texto.style.color = colores[colorIndex];
+        colorIndex = (colorIndex + 1);
+    });
     
+    resetColorBtn.addEventListener('click', function() {
+        texto.style.color = '#333';
+        colorIndex = 0;
+    });
 });
