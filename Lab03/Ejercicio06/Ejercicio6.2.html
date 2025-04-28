@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio6.2</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Calculadora Universal</h1>
+
+        <div class="input-group">
+            <input type="number" id="num1" placeholder="Primer número">
+            <select id="operador">
+                <optgroup label="Aritméticas">
+                    <option value="+">Suma (+)</option>
+                    <option value="-">Resta (-)</option>
+                    <option value="*">Multiplicación (*)</option>
+                    <option value="/">División (/)</option>
+                    <option value="%">Módulo (%)</option>
+                    <option value="**">Potencia (**)</option>
+                </optgroup>
+                <optgroup label="Lógicas">
+                    <option value="&&">AND lógico (&&)</option>
+                    <option value="||">OR lógico (||)</option>
+                </optgroup>
+            </select>
+            <input type="number" id="num2" placeholder="Segundo número">
+        </div>
+
+        <button id="calcular-btn">Calcular</button>
+
+        <div class="resultado">
+            <h2>Resultado:</h2>
+            <div id="resultado"></div>
+            <div id="binario"></div>
+        </div>
+    </div>
+
+    <script src="Ejercicio6.2.js"></script>
+</body>
+
+</html>
