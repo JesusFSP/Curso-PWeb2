@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             case '/':
                 resultado = num1 / num2;
-                operacion = `${num1} ÷ ${num2}`;
+                operacion = `${num1} / ${num2}`;
                 break;
 
             case '%':
@@ -55,5 +55,10 @@ document.addEventListener('DOMContentLoaded', function () {
             default:
                 throw new Error("Operador no soportado");
         }
+        mostrarResultado(operacion, resultado);
+    }
+
+    function mostrarResultado(operacion, resultado) {
+        resultadoDiv.innerHTML = `<span class="operacion">${operacion} = </span>${resultado}`;
     }
 });
