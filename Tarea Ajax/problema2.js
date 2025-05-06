@@ -37,7 +37,7 @@ function mostrarGrafico() {
             label: region.region,
             data: region.confirmed.map(item => parseInt(item.value)),
             borderColor: colores[index],
-            backgroundColor: colores[index] + '20', // Añade transparencia
+            backgroundColor: colores[index] + '20', 
             borderWidth: 1
         };
     });
