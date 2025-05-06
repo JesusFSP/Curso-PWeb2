@@ -14,6 +14,16 @@ function loadData() {
             drawRegionList();
         })
         .catch(error => {
-            alert('Error al cargar los datos. Verifique la consola para más detalles.');
+            alert('Error al cargar los datos.');
         });
+}
+
+function drawRegionList() {
+    const container = document.getElementById('regionList');
+    container.innerHTML = '<h2>Lista de Regiones</h2><div class="region-list" > <ul></ul>';
+
+    covidData.forEach(region => {
+        container.querySelector('ul').innerHTML += `<li>${region.region}</li>`;
+    });
+    container.innerHTML += '</ul></div>';
 }
