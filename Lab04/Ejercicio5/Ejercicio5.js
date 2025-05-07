@@ -11,7 +11,7 @@ function loadData() {
         .then(response => response.json())
         .then(data => {
             covidData = data;
-            drawRegionList();
+            drawComparativeChart();
         })
         .catch(error => {
             alert('Error al cargar los datos. Verifique la consola para más detalles.');
