@@ -19,7 +19,6 @@ function loadData() {
 }
 
 function initializarRegiones() {
-    // Llenar los selectores de regiones
     const region1 = document.getElementById('region1');
     const region2 = document.getElementById('region2');
     
