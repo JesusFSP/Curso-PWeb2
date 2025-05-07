@@ -14,7 +14,7 @@ function loadData() {
             drawTop10Regions();
         })
         .catch(error => {
-            alert('Error al cargar los datos. Verifique la consola para más detalles.');
+            alert('Error al cargar los datos.');
         });
 }
 
