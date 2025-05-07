@@ -56,6 +56,19 @@ function drawCrecimientoChart() {
         dataTable.addRow(filaDatos);
     }
 
+    const options = {
+        title: 'Crecimiento de Casos (excluyendo Lima y Callao)',
+        legend: { position: 'bottom' },
+        hAxis: { 
+            title: 'Fecha', 
+            format: 'dd/MM' 
+        },
+        vAxis: { 
+            title: 'Casos Confirmados', 
+            scaleType: 'log' // Escala logarítmica
+        }
+    };
+
     const chart = new google.visualization.LineChart(document.getElementById('crecimientoChart'));
     chart.draw(dataTable, options);
 }
