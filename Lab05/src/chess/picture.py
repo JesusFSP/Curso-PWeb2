@@ -13,7 +13,7 @@ class Picture:
 
   def verticalMirror(self):
     """ Devuelve el espejo vertical de la imagen """
-    return Picture([row[::,-1] for row in self.img]) 
+    return Picture([row[::-1] for row in self.img])
 
   def horizontalMirror(self):
     """ Devuelve el espejo horizontal de la imagen """
