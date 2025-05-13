@@ -1,5 +1,5 @@
 from pieces import *
-from Lab05.src.picture import *
+from picture import *
 
 bishop = Picture(BISHOP)
 king = Picture(KING)
