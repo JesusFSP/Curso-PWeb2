@@ -17,4 +17,14 @@ draw(
         .join(square.negative().overlay(pawn.negative()))
         .horizontalRepeat(4)
     )
+    .under(
+        square.join(square.negative()).horizontalRepeat(4)
+        .up(square.negative().join(square).horizontalRepeat(4))
+        .verticalRepeat(2)
+    )
+    .under(
+        square.negative().overlay(pawn)
+        .join(square.overlay(pawn))
+        .horizontalRepeat(4)
+    )
 )
