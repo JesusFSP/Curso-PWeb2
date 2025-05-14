@@ -12,5 +12,9 @@ draw(
     .join(square.negative().overlay(knight.negative()))
     .join(square.overlay(rock.negative()))
     
-    
+    .under(
+        square.overlay(pawn.negative())
+        .join(square.negative().overlay(pawn.negative()))
+        .horizontalRepeat(4)
+    )
 )
