@@ -54,3 +54,14 @@ class Picture:
         for _ in range(n):
             result = result.under(self) if result.img else self
         return result
+  
+  def overlay(self, other):
+        """Superpone otra imagen sobre esta, manteniendo los colores de fondo"""
+        combined_img = []
+        for base_row, overlay_row in zip(self.img, other.img):
+            combined_row = ""
+            for base_char, overlay_char in zip(base_row, overlay_row):
+                # Mantener el carácter de la pieza a menos que sea espacio
+                combined_row += overlay_char if overlay_char != ' ' else base_char
+            combined_img.append(combined_row)
+        return Picture(combined_img)
