@@ -11,7 +11,6 @@ draw(
     .join(square.overlay(bishop.negative()))
     .join(square.negative().overlay(knight.negative()))
     .join(square.overlay(rock.negative()))
-    
     .under(
         square.overlay(pawn.negative())
         .join(square.negative().overlay(pawn.negative()))
@@ -37,4 +36,5 @@ draw(
         .join(square.overlay(knight))
         .join(square.negative().overlay(rock))
     )
+    
 )
