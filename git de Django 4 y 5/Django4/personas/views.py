@@ -15,7 +15,7 @@ def personasAnotherCreateView(request):
             Persona.objects.create(**form.cleaned_data)
             form = RawPersonaForm() 
         else:
-            print(form.errors) # [cite: 12]
+            print(form.errors) 
     else:
         form = RawPersonaForm()
 
@@ -26,9 +26,11 @@ def personasAnotherCreateView(request):
 
 class PersonaListView(ListView):
     model = Persona
+    
+    queryset = Persona.objects.filter(edad__lte=40)
 
 def personasShowObject(request, myId):
-    # obj = Persona.objects.get(id=myId)
+    
     obj = get_object_or_404(Persona, id=myId) # 
     context = {
         'object': obj
@@ -39,7 +41,7 @@ def personasDeleteView(request, myId):
     obj = get_object_or_404(Persona, id=myId)
     if request.method == "POST":
         obj.delete() # 
-        return redirect('/personas/') # Redirige a la lista [cite: 38]
+        return redirect('/personas/') 
     context = {
         "object": obj
     }
