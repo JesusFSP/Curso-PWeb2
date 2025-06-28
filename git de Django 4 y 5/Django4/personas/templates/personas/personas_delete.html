@@ -2,5 +2,5 @@
 <form method="POST">
     {% csrf_token %}
     <input type="submit" value="Sí, borrar">
-    <a href="/personas/">Cancelar</a>
+    <a href="{{ object.get_absolute_url }}">Cancelar</a>
 </form>
