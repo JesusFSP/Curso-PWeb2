@@ -1,0 +1,6 @@
+<h1>¿Seguro que quieres borrar a "{{ object.nombres }}"?</h1>
+<form method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Sí, borrar">
+    <a href="/personas/">Cancelar</a>
+</form>
