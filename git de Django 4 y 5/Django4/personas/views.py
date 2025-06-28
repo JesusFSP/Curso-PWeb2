@@ -21,5 +21,10 @@ def personasAnotherCreateView(request):
         'form': form
     }
     return render(request, "personas/personasCreate.html", context)
-
+def personasListView(request):
+    queryset = Persona.objects.all()
+    context = {
+        "object_list": queryset
+    }
+    return render(request, "personas/personas_list.html", context)
 

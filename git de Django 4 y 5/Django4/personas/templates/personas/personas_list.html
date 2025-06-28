@@ -1,0 +1,6 @@
+<h1>Lista de Personas</h1>
+<ul>
+{% for instance in object_list %}
+    <li>{{ instance.id }} - {{ instance.nombres }}</li>
+{% endfor %}
+</ul>
