@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import (
-    personasListView,
+    PersonaListView, 
     personasShowObject,
     personasDeleteView,
     personasAnotherCreateView,
@@ -8,7 +8,7 @@ from .views import (
 
 app_name = 'personas' 
 urlpatterns = [
-    path('', personasListView, name='lista'),
+    path('', PersonaListView.as_view(), name='persona-list'),
     path('crear/', personasAnotherCreateView, name='crear'),
     path('<int:myId>/', personasShowObject, name='detalle'),
     path('<int:myId>/delete/', personasDeleteView, name='borrar'),
