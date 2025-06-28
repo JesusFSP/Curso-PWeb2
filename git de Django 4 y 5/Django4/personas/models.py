@@ -11,4 +11,4 @@ class Persona(models.Model):
         return f"{self.nombres} {self.apellidos}"
     
     def get_absolute_url(self):
-        return reverse("personas:detalle", kwargs={"myId": self.id})
+        return reverse('personas:persona-detail', kwargs={'pk': self.id})

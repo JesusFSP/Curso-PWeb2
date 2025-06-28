@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.views.generic.list import ListView
+from django.views.generic.list import ListView, DetailView
 from .forms import RawPersonaForm
 from .models import Persona 
 
@@ -29,13 +29,8 @@ class PersonaListView(ListView):
     
     queryset = Persona.objects.filter(edad__lte=40)
 
-def personasShowObject(request, myId):
-    
-    obj = get_object_or_404(Persona, id=myId) # 
-    context = {
-        'object': obj
-    }
-    return render(request, "personas/personas_detail.html", context)
+class PersonaDetailView(DetailView):
+    model = Persona
 
 def personasDeleteView(request, myId):
     obj = get_object_or_404(Persona, id=myId)
