@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.views.generic.list import ListView
 from .forms import RawPersonaForm
 from .models import Persona 
 
@@ -22,12 +23,9 @@ def personasAnotherCreateView(request):
         'form': form
     }
     return render(request, "personas/personasCreate.html", context)
-def personasListView(request):
-    queryset = Persona.objects.all()
-    context = {
-        "object_list": queryset
-    }
-    return render(request, "personas/personas_list.html", context)
+
+class PersonaListView(ListView):
+    model = Persona
 
 def personasShowObject(request, myId):
     # obj = Persona.objects.get(id=myId)
