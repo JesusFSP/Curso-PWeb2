@@ -1,2 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
 <h1>{{ object.nombres }} {{ object.apellidos }}</h1>
 <p>{{ object.edad }} años</p>
+<p>{{ object.donador }} donador</p>
+{% endblock %}
