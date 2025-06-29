@@ -1,8 +1,18 @@
-from django.shortcuts import render, get_object_or_404, redirect
-from django.views.generic.list import ListView, DetailView
+from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
+from django.views.generic import ListView, DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .forms import RawPersonaForm
 from .models import Persona 
 
+class PersonaCreateView(CreateView):
+    model = Persona
+    fields = [
+        'nombres',
+        'apellidos',
+        'edad',
+        'donador'
+    ] 
 
 def personasAnotherCreateView(request):
     
