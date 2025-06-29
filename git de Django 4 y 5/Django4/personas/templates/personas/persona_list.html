@@ -1,11 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Lista de Personas</h1>
-<p><a href="{% url 'personas:persona-create' %}">Crear Nueva Persona</a></p>
-<ul>
-{% for instance in object_list %}
-    <li><a href="{{ instance.get_absolute_url }}">{{ instance.nombres }} {{ instance.apellidos }}</a></li>
-{% endfor %}
-</ul>
+  <h2>Lista de personas</h2>
+
+  <a href="{% url 'personas:persona-create' %}">Crear Nueva Persona</a>
+
+  <ul>
+    {% for persona in object_list %}
+      <li>
+        {{ persona.nombres }} {{ persona.apellidos }} 
+        <a href="{% url 'personas:persona-update' persona.pk %}">Modificar</a> 
+        <a href="{% url 'personas:persona-delete' persona.pk %}">Borrar</a>
+      </li>
+    {% empty %}
+      <li>No hay personas registradas.</li>
+    {% endfor %}
+  </ul>
 {% endblock %}

@@ -1,21 +1,14 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>{% block title %}Mi sitio{% endblock %}</title>
-
-  
   <link rel="stylesheet" href="{% static 'personas/style.css' %}">
 </head>
 <body>
   <header>
     <h1>Mi sitio</h1>
-    <nav>
-      <a href="{% url 'personas:persona-list' %}">Lista de personas</a> |
-      <a href="{% url 'personas:persona-create' %}">Crear persona</a>
-    </nav>
   </header>
 
   <main>

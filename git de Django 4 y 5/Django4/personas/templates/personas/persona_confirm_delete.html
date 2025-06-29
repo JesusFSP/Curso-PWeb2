@@ -1,9 +1,11 @@
-{% extends 'base.html' %}
-{% block body %}
-  <h1>Borrando Persona</h1>
-  <h2>{{ object.apellidos }} / {{ object.nombres }}</h2>
-  <form method="post">{% csrf_token %}
-    <p>Confirme que desea borrar a esta persona</p>
-    <input type="submit" value="Confirmar">
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>¿Estás seguro de que quieres borrar "{{ object.nombres }} {{ object.apellidos }}"?</h2>
+
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Sí, borrar</button>
+    <a href="{% url 'personas:persona-list' %}">Cancelar</a>
   </form>
 {% endblock %}
