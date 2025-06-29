@@ -14,40 +14,25 @@ class PersonaCreateView(CreateView):
         'donador'
     ] 
 
-def personasAnotherCreateView(request):
-    
-    if request.method == "POST":
-        
-        form = RawPersonaForm(request.POST)
-        if form.is_valid(): 
-            print(form.cleaned_data)
-            
-            Persona.objects.create(**form.cleaned_data)
-            form = RawPersonaForm() 
-        else:
-            print(form.errors) 
-    else:
-        form = RawPersonaForm()
+class PersonaUpdateView(UpdateView):
+    model = Persona
+    fields = [
+        'nombres',
+        'apellidos',
+        'edad',
+        'donador'
+    ]
 
-    context = {
-        'form': form
-    }
-    return render(request, "personas/personasCreate.html", context)
+class PersonaDeleteView(DeleteView):
+    model = Persona
+    success_url = reverse_lazy('personas:persona-list')
+    
 
 class PersonaListView(ListView):
     model = Persona
     
-    queryset = Persona.objects.filter(edad__lte=40)
+    #queryset = Persona.objects.filter(edad__lte=40)
 
 class PersonaDetailView(DetailView):
     model = Persona
 
-def personasDeleteView(request, myId):
-    obj = get_object_or_404(Persona, id=myId)
-    if request.method == "POST":
-        obj.delete() # 
-        return redirect('/personas/') 
-    context = {
-        "object": obj
-    }
-    return render(request, "personas/personas_delete.html", context)

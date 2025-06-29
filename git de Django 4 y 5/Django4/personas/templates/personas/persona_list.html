@@ -1,5 +1,5 @@
 <h1>Lista de Personas</h1>
-<p><a href="{% url 'personas:crear' %}">Crear Nueva Persona</a></p>
+<p><a href="{% url 'personas:persona-create' %}">Crear Nueva Persona</a></p>
 <ul>
 {% for instance in object_list %}
     <li><a href="{{ instance.get_absolute_url }}">{{ instance.nombres }} {{ instance.apellidos }}</a></li>

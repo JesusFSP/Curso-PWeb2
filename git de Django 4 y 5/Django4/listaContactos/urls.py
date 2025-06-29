@@ -17,9 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from personas.views import personasAnotherCreateView
+from personas.views import PersonaCreateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('personas/', include('personas.urls', namespace='personas')),
+    path('create/', PersonaCreateView.as_view(), name='persona-create'),
+    path('personas/', include('personas.urls')),
 ]
