@@ -1,11 +1,19 @@
+// game-board.component.ts
 import { Component } from '@angular/core';
+import { GameService } from '../game.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-game-board',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './game-board.html',
-  styleUrl: './game-board.css'
+  styleUrls: ['./game-board.css']
 })
-export class GameBoard {
+export class GameBoardComponent {
+  constructor(public gameService: GameService) {}
 
+  newGame() {
+    this.gameService.newGame();
+  }
 }
