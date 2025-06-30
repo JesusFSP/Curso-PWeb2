@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+// hangman-display.component.ts
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-hangman-display',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './hangman-display.html',
-  styleUrl: './hangman-display.css'
+  styleUrls: ['./hangman-display.css']
 })
-export class HangmanDisplay {
-
+export class HangmanDisplayComponent {
+  @Input() attemptsLeft: number = 6;
 }
