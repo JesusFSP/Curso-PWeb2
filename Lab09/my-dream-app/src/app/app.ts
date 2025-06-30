@@ -24,11 +24,11 @@ export class App {
 
   constructor() {
     console.log("Constructor working...");
-    this.name = "Tu Nombre";
-    this.email = "tu@email.com";
+    this.name = "Jesus Silva";
+    this.email = "jsilva@unsa.edu.pe";
     this.webpage = "http://www.tusitio.com";
     this.hobbies = ["Fútbol", "Programación", "Netflix"];
-    this.users = ['ryan', 'joe', 'cameron', 'john'];
+    this.users = ['Jesus', 'joe', 'cameron', 'john'];
   }
 
   showhobbies() {
