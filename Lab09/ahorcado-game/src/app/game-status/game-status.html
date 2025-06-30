@@ -1,1 +1,12 @@
-<p>game-status works!</p>
+<!-- game-status.component.html -->
+<div class="game-status" *ngIf="isWon || isLost">
+    <div *ngIf="isWon" class="message won">
+      ¡Felicidades! ¡Ganaste!
+    </div>
+    
+    <div *ngIf="isLost" class="message lost">
+      ¡Oh no! Perdiste. La palabra era: {{ word }}
+    </div>
+    
+    <button (click)="newGame.emit()">Nuevo Juego</button>
+  </div>
