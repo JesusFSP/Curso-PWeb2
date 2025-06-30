@@ -1,1 +1,30 @@
-<p>hangman-display works!</p>
+<!-- hangman-display.component.html -->
+<div class="hangman">
+    <svg viewBox="0 0 200 200">
+      <!-- Base -->
+      <line x1="20" y1="180" x2="100" y2="180" stroke="black" stroke-width="3" *ngIf="attemptsLeft < 6"/>
+      
+      <!-- Poste -->
+      <line x1="60" y1="180" x2="60" y2="20" stroke="black" stroke-width="3" *ngIf="attemptsLeft < 6"/>
+      <line x1="60" y1="20" x2="140" y2="20" stroke="black" stroke-width="3" *ngIf="attemptsLeft < 6"/>
+      <line x1="140" y1="20" x2="140" y2="40" stroke="black" stroke-width="3" *ngIf="attemptsLeft < 6"/>
+      
+      <!-- Cabeza -->
+      <circle cx="140" cy="55" r="15" stroke="black" stroke-width="2" fill="none" *ngIf="attemptsLeft < 5"/>
+      
+      <!-- Cuerpo -->
+      <line x1="140" y1="70" x2="140" y2="120" stroke="black" stroke-width="2" *ngIf="attemptsLeft < 4"/>
+      
+      <!-- Brazos -->
+      <line x1="140" y1="80" x2="120" y2="100" stroke="black" stroke-width="2" *ngIf="attemptsLeft < 3"/>
+      <line x1="140" y1="80" x2="160" y2="100" stroke="black" stroke-width="2" *ngIf="attemptsLeft < 3"/>
+      
+      <!-- Piernas -->
+      <line x1="140" y1="120" x2="120" y2="150" stroke="black" stroke-width="2" *ngIf="attemptsLeft < 2"/>
+      <line x1="140" y1="120" x2="160" y2="150" stroke="black" stroke-width="2" *ngIf="attemptsLeft < 2"/>
+      
+      <!-- Cara (solo cuando pierde) -->
+      <line x1="135" y1="50" x2="145" y2="50" stroke="red" stroke-width="2" *ngIf="attemptsLeft < 1"/>
+      <line x1="135" y1="60" x2="145" y2="60" stroke="red" stroke-width="2" *ngIf="attemptsLeft < 1"/>
+    </svg>
+  </div>
