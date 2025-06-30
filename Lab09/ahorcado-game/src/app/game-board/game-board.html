@@ -1,1 +1,25 @@
-<p>game-board works!</p>
+<!-- game-board.component.html -->
+<div class="game-container">
+    <h1>Juego del Ahorcado</h1>
+    
+    <div class="hangman-container">
+      <app-hangman-display [attemptsLeft]="gameService.getAttemptsLeft()"></app-hangman-display>
+    </div>
+    
+    <div class="word-display">
+      {{ gameService.getWordDisplay() }}
+    </div>
+    
+    <app-keyboard 
+      (letterSelected)="gameService.guessLetter($event)"
+      [disabledLetters]="gameService.getGuessedLetters()"
+      [gameOver]="gameService.isGameWon() || gameService.isGameLost()">
+    </app-keyboard>
+    
+    <app-game-status
+      [isWon]="gameService.isGameWon()"
+      [isLost]="gameService.isGameLost()"
+      [word]="gameService.getSelectedWord()"
+      (newGame)="newGame()">
+    </app-game-status>
+  </div>
