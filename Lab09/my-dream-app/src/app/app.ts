@@ -26,7 +26,7 @@ export class App {
     console.log("Constructor working...");
     this.name = "Jesus Silva";
     this.email = "jsilva@unsa.edu.pe";
-    this.webpage = "http://www.tusitio.com";
+    this.webpage = "https://github.com/JesusFSP/Curso-PWeb2.git";
     this.hobbies = ["Fútbol", "Programación", "Netflix"];
     this.users = ['Jesus', 'joe', 'cameron', 'john'];
   }
