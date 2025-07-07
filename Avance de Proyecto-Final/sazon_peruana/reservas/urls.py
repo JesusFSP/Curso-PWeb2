@@ -5,4 +5,5 @@ app_name = 'reservas'
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('reservar/', views.crear_reserva, name='crear_reserva'),
 ]
