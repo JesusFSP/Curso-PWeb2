@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sazón Peruana - Sistema de Reservas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+      }
+      main {
+        flex: 1;
+      }
+    </style>
 </head>
 <body class="bg-light">
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="{% url 'reservas:home' %}">Sazón Peruana</a>
@@ -32,8 +42,7 @@
         </div>
     </nav>
 
-    <!-- Header principal -->
-    <header class="py-5 text-center text-white"
+    <header class="py-5 text-center text-blue"
         style="background: url('https://source.unsplash.com/1600x400/?peruvian-food,restaurant') center/cover no-repeat;">
         <div class="container">
             <h1 class="display-4 fw-bold">Bienvenido a Sazón Peruana</h1>
@@ -42,17 +51,45 @@
         </div>
     </header>
 
-    <!-- Contenido dinámico -->
     <main class="py-5">
         <div class="container">
             {% block content %}
-            <!-- Aquí se mostrará el contenido de cada página -->
             {% endblock %}
+
+            <h2 class="text-center mb-4">Nuestros Platos</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="{% static 'reservas/images/ceviche.jpg' %}" class="card-img-top" alt="Ceviche">
+                        <div class="card-body">
+                            <h5 class="card-title">Ceviche Fresco</h5>
+                            <p class="card-text">Disfruta del auténtico ceviche peruano, fresco y delicioso.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="{% static 'reservas/images/lomo-saltado.jpg' %}" class="card-img-top" alt="Lomo Saltado">
+                        <div class="card-body">
+                            <h5 class="card-title">Lomo Saltado</h5>
+                            <p class="card-text">El clásico lomo saltado preparado con la sazón tradicional.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="{% static 'reservas/images/Pisco-Sour.jpg' %}" class="card-img-top" alt="Pisco Sour">
+                        <div class="card-body">
+                            <h5 class="card-title">Pisco Sour</h5>
+                            <p class="card-text">Prueba nuestro exquisito Pisco Sour, preparado por expertos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-4">
+    <footer class="bg-dark text-white text-center py-4 mt-auto">
         <p class="mb-0">&copy; 2025 Sazón Peruana. Todos los derechos reservados.</p>
     </footer>
 
