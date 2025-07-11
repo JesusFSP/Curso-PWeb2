@@ -1,22 +1,15 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-
-import { AppComponent } from './app';
+import { Component } from '@angular/core';
 import { TaskListComponent } from './components/task-list/task-list';
+import { RouterOutlet } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    TaskListComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    FormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [TaskListComponent, RouterOutlet, HttpClientModule],
+  templateUrl: './app.html',
+  styleUrl: './app.css',
 })
-export class AppModule { }
+export class AppComponent {
+  title = 'Djangular Tareas'; 
+}

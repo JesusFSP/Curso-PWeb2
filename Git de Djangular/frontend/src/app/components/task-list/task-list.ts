@@ -1,22 +1,30 @@
-import { Component, OnInit } from '@angular/core';
-import { TaskService, Task } from '../../services/task.service';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { TaskService, Task } from '../../services/task';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-task-list',
+  standalone: true,
+  imports: [
+    CommonModule, 
+    FormsModule,
+    HttpClientModule, 
+  ],
   templateUrl: './task-list.html',
+  styleUrl: './task-list.css',
 })
-export class TaskListComponent implements OnInit {
+export class TaskListComponent {
   tasks: Task[] = [];
-  newTaskTitle: string = '';
+  newTaskTitle = '';
 
-  constructor(private taskService: TaskService) {}
-
-  ngOnInit() {
+  constructor(private taskService: TaskService) {
     this.loadTasks();
   }
 
   loadTasks() {
-    this.taskService.getTasks().subscribe(data => {
+    this.taskService.getTasks().subscribe((data: Task[]) => {
       this.tasks = data;
     });
   }
@@ -35,7 +43,8 @@ export class TaskListComponent implements OnInit {
     this.taskService.updateTask(task).subscribe();
   }
 
-  deleteTask(id: number) {
+  deleteTask(id: number | undefined) {
+    if (!id) return;
     this.taskService.deleteTask(id).subscribe(() => this.loadTasks());
   }
 }
